@@ -23,5 +23,7 @@ namespace Core.Models
 
         public int StoreId { get; set; }
         public Store Store { get; set; }
+        public int ImageResourceId { get; set; }
+        public ImageResource ImageResource { get; set; }
     }
 }
