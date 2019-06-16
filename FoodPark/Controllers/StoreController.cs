@@ -1,4 +1,4 @@
-﻿using FoodPark.Models;
+﻿using Core.Models;
 using Microsoft.AspNetCore.Mvc;
 using System.Collections.Generic;
 
