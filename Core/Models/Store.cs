@@ -1,4 +1,5 @@
-﻿using System.ComponentModel;
+﻿using System.Collections.Generic;
+using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
@@ -6,6 +7,11 @@ namespace Core.Models
 {
     public class Store
     {
+        public Store()
+        {
+            Products = new HashSet<Product>();
+        }
+
         [Key]
         public int Id { get; set; }
         [Column(TypeName = "nvarchar(250)")]
@@ -20,5 +26,6 @@ namespace Core.Models
         [Column(TypeName = "varchar(100)")]
         [DisplayName("Location")]
         public string OfficeLocation { get; set; }
+        public ICollection<Product> Products { get; set; }
     }
 }
