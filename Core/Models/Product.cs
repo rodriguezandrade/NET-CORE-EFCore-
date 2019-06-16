@@ -20,10 +20,7 @@ namespace Core.Models
         [Column(TypeName = "varchar(100)")]
         [DisplayName("Description")]
         public string Description { get; set; }
-
         public int StoreId { get; set; }
         public Store Store { get; set; }
-        public int ImageResourceId { get; set; }
-        public ImageResource ImageResource { get; set; }
     }
 }

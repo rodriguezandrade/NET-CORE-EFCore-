@@ -1,11 +1,11 @@
-﻿namespace Core.Models
+﻿using System.ComponentModel.DataAnnotations;
+
+namespace Core.Models
 {
     public class Category
     {
+        [Key]
         public int Id { get; set; }
-        public int Name { get; set; }
-        public int ImageResourceId { get; set; }
-
-        public ImageResource ImageResource { get; set; }
+        public string Name { get; set; }
     }
 }

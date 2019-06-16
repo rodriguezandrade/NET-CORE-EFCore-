@@ -8,5 +8,12 @@ namespace Core.Models
         public string Name { get; set; }
         public string URL { get; set; }
         public ItemType Descriminator { get; set; }
+
+        public int ProductId { get; set; }
+        public Product Product { get; set; }
+        public int StoreId { get; set; }
+        public Store Store { get; set; }
+        public int CategoryId { get; set; }
+        public Category Category { get; set; }
     }
 }
