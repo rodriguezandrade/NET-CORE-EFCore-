@@ -1,6 +1,6 @@
 ﻿namespace Core.Repositories
 {
-    public class ImageResourceRepository
+    public class ImageResourceRepository : IImageResourceRepository
     {
     }
 }

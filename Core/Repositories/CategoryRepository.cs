@@ -17,5 +17,12 @@ namespace Core.Repositories
         {
             return ModelContext.Set<Category>().ToList();
         }
+
+        public Category Save(Category category)
+        {
+            var data = ModelContext.Categories.Add(category).Entity;
+            ModelContext.SaveChanges();
+            return category;
+        }
     }
 }
