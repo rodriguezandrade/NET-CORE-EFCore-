@@ -41,7 +41,7 @@ namespace FoodPark.Controllers
             //{
             //    var postedFile = httpRequest.Files[0];
             //    byte[] urlImage;
-            //    if (_announcementService.ConvertImage(postedFile, out urlImage))
+            //    if (_categoryService.ConvertImage(postedFile, out urlImage))
             //    {
             //        announcement.BinaryImage = urlImage;
             //    }
