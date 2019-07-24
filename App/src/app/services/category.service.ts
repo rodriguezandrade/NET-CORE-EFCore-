@@ -21,7 +21,6 @@ export class CategoryService {
 
   add(category: Category, files: File[]): Observable<Boolean> {
 
-   
     const formdata: FormData = new FormData();
     formdata.append('data', JSON.stringify(category));
 
