@@ -1,6 +1,7 @@
 ﻿using Core.Models;
 using Core.Repositories;
 using Core.Repositories.Interfaces;
+using Core.Services;
 using Core.Services.Interfaces;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
@@ -36,6 +37,8 @@ namespace FoodPark
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
             services.AddScoped<ICategoryService, CategoryService>();
             services.AddScoped<ICategoryRepository, CategoryRepository>();
+            services.AddScoped<IImageResourceService, ImageResourceService>();
+            services.AddScoped<IImageResourceRepository,  ImageResourceRepository>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

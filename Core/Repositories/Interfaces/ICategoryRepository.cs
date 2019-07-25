@@ -6,5 +6,6 @@ namespace Core.Repositories.Interfaces
     public interface ICategoryRepository
     {
         List<Category> Get();
+        Category Save(Category category);
     }
 }
