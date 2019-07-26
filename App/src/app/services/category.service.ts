@@ -17,7 +17,8 @@ const httpOptions = {
 export class CategoryService {
 
   constructor(private http: HttpClient) { }
-  private _url = `${AppSettings.API_ENDPOINT}categories`;
+  private _urlBase = `${AppSettings.API_ENDPOINT}categories`;
+  private _urlUpload = `${this._urlBase}/upload`;
 
   add(category: Category, files: File[]): Observable<Boolean> {
 
@@ -30,6 +31,10 @@ export class CategoryService {
       });
     }
     console.log( 'elarreglo', formdata);
-    return this.http.post<boolean>(this._url, formdata);
+    return this.http.post<boolean>(this._urlBase, formdata);
+  }
+
+  upload(formData :FormData){
+    return this.http.post(this._urlUpload, formData, { reportProgress: true, observe: 'events' });
   }
 }

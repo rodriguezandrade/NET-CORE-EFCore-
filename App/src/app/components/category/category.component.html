@@ -9,7 +9,7 @@
             placeholder="Nombre Categoria">
         </div>
         <div class="form-group">
-          <input style="display: none" type="file" (change)="onFileChanged($event)" #fileInput>
+          <input style="display: none" type="file" (change)="uploadFile(file.files)" #file multiple>
           <div class="form-group">
             <p>Imagenes Selecionadas</p>
             <div class="form-group" *ngFor="let images of fileArray">
@@ -18,10 +18,27 @@
             <button *ngIf="fileArray.length > 0" class="btn btn-outline-danger btn-sm"
               (click)="cleanArrayImage()">Limpiar Imágenes</button>
           </div>
-          <button type="button" class="form-group" (click)="fileInput.click()">Selecionar Imagen</button>
+          <button type="button" class="form-group" (click)="file.click()">Selecionar Imagen</button>
         </div>
         <button type="submit" class="btn btn-primary">Guardar Categoría</button>
       </form>
     </div>
   </div>
+	
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th scope="col">Image</th>
+      <th scope="col">Name</th>
+      <th scope="col">Address</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let user of users">
+      <td><img [src]="createImgPath(user.imgPath)" alt="profile picture" style="width:60px; height:60px;"></td>
+      <td>{{user.name}}</td>
+      <td>{{user.address}}</td>
+    </tr>
+  </tbody>
+</table>
 </div>
