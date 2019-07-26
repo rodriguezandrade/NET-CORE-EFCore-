@@ -1,3 +1,34 @@
-<p>
-  store works!
-</p>
+<div class="container">
+  <div class="row">
+    <div class="col-8">
+        <form [formGroup]="storeForm" (ngSubmit)="onSubmit()">
+            <div class="form-group">
+              <label for="name">Nombre</label>
+              <input type="text" class="form-control" id="name" formControlName="nombre"  placeholder="Nombre de la Tienda" required>
+            </div>
+
+            <div class="form-group">
+                <label for="rfc">RFC</label>
+                <input type="text" class="form-control" id="rfc" formControlName="RFC" placeholder="Registro Federal del Contribuyente" required>
+            </div>
+          
+            <div class="form-group">
+              <label for="location">Ubicación</label>
+              <input type="text" class="form-control" id="location" formControlName="ubicacion" placeholder="Ubicación de la Tienda" required>
+            </div>
+          
+            <div class="form-group">
+                <label for="category">Categoría</label>
+                <select class="custom-select" id="category" formControlName="categoria" required>
+                  <option selected>Seleccione una Categoria</option>
+                  <option value="1">Comida Rapida</option>
+                  <option value="2">Bebidas</option>
+                  <option value="3">Postres</option>
+                </select>
+             </div>
+            
+            <button type="submit" class="btn btn-primary">Guardar</button>
+        </form>
+    </div>
+  </div>
+</div>
